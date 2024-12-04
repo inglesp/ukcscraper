@@ -2,7 +2,7 @@
 
 ## Setup
 
-* Install uv (https://github.com/astral-sh/uv)
+* Install [uv](https://github.com/astral-sh/uv)
 * Run `uv sync`
 * Run `uv run playwright install`
 
