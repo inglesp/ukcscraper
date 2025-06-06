@@ -40,4 +40,4 @@ for i, r in enumerate(records):
     url = f"https://www.ukclimbing.com/logbook/crags/symonds_yat-403/{r['slug']}"
     print(f"{i} / {len(records)} / {url}")
     p.goto(url)
-    file_path.write_text(p.content())
+    file_path.write_text(p.content(), encoding="utf-8")

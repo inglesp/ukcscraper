@@ -10,7 +10,7 @@ username = os.environ["UKC_USERNAME"]
 
 
 def main():
-    with open("symonds-yat-logs.csv", "w") as f:
+    with open("symonds-yat-logs.csv", "w", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f, ["name", "grade", "user_id", "user_name", "date", "style"]
         )
@@ -21,7 +21,7 @@ def main():
 
 
 def extract_logs(path):
-    doc = BeautifulSoup(path.read_text(), "html.parser")
+    doc = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
     name, grade = doc.find(class_="nav-tabs-header").find("h1").text.splitlines()
     grade = grade.strip()
     for t in doc.find(id="logbooks").find_all("table"):
